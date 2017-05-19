@@ -11,7 +11,7 @@
 <body>
 
 <div class="container-fluid ">
-    <h1>Add new bus:</h1>
+    <h1>Add new plane:</h1>
     <div class="col-md-5">
         <form id="addForm" method="get" action="/show">
             <div class="form-group">
@@ -19,8 +19,8 @@
                 <input type="text" name="name" id="name" class="form-control">
             </div>
             <div class="form-group">
-                <label for="speed">Speed: </label>
-                <input type="text" name="speed" id="speed" class="form-control">
+               <label for="speednow">Speed: </label>
+                <input type="text" name="speednow" id="speednow" class="form-control">
             </div>
             <div class="form-group">
                 <label for="mass">Mass: </label>

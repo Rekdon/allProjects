@@ -25,7 +25,7 @@
             <tbody>
             <tr>
                 <td>${Plane.name}</td>
-                <td>${Plane.speed}</td>
+                <td>${Plane.speednow}</td>
                 <td>${Plane.mass}</td>
                 <td>${Plane.numberofpassengers}</td>
                 <td>${Plane.numberofwheels}</td>

@@ -22,7 +22,7 @@ public class ShowAll extends HttpServlet {
         try {
             database = DatabaseDAO.getInstance();
             List<Plane> databaseList = database.allPlane();
-            request.setAttribute("Plane",databaseList);
+            request.setAttribute("Planes",databaseList);
             request.getRequestDispatcher("/showAll.jsp").forward(request,response);
         } catch (SQLException e) {
             e.printStackTrace();
