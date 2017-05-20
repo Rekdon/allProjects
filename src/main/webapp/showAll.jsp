@@ -16,11 +16,11 @@
             <tr>
                 <th>Name</th>
                 <th>Speed</th>
+                <th>Id</th>
                 <th>Mass</th>
                 <th>Number Of Passengers</th>
                 <th>Number Of Wheels</th>
                 <th>Number Of Pilots</th>
-                <th>Id</th>
             </tr>
             </thead>
             <tbody>
@@ -28,11 +28,11 @@
                 <tr>
                     <td>${PLANE.name}</td>
                     <td>${PLANE.speed}</td>
+                    <td>${PLANE.id}</td>
                     <td>${PLANE.mass}</td>
                     <td>${PLANE.numberOfPassengers}</td>
                     <td>${PLANE.numberOfWheels}</td>
                     <td>${PLANE.numberOfPilots}</td>
-                    <td>${PLANE.id}</td>
                 </tr>
             </c:forEach>
             </tbody>

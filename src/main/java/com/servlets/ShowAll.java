@@ -2,6 +2,7 @@ package com.servlets;
 
 import com.database.DatabaseDAO;
 import com.myclass.impliments.plane.Plane;
+import org.postgresql.util.PSQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  * Created by Rekdon on 19.05.2017.
@@ -19,11 +20,11 @@ import java.util.List;
 @WebServlet("/showAll")
 public class ShowAll extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        DatabaseDAO database = null;
+        DatabaseDAO dao = null;
         try {
-            database = DatabaseDAO.getInstance();
-            ArrayList<Plane> databaseList = database.allPlane();
-            request.setAttribute("PLANES",databaseList);
+            dao = DatabaseDAO.getInstance();
+            ArrayList<Plane> daoList = dao.allPlane();
+            request.setAttribute("PLANES",daoList);
             request.getRequestDispatcher("/showAll.jsp").forward(request,response);
         } catch (SQLException e) {
             e.printStackTrace();

@@ -2850,7 +2850,7 @@
             contentType: "application/x-www-form-urlencoded; charset=UTF-8",
             accepts: {
                 "*": Kb,
-                text: "text/plain",
+                text: "text/plane",
                 html: "text/html",
                 xml: "application/xml, text/xml",
                 json: "application/json, text/javascript"
