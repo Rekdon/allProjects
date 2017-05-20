@@ -4,7 +4,7 @@
 <head>
     <title>Show Added</title>
     <script src="/js/JQuery.js"></script>
-    <link rel="stylesheet" href="/src/main/webapp/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <script src="/js/bootstrap.js"></script>
 </head>
 <body>
@@ -24,13 +24,13 @@
             </thead>
             <tbody>
             <tr>
-                <td>${Plane.name}</td>
-                <td>${Plane.speednow}</td>
-                <td>${Plane.mass}</td>
-                <td>${Plane.numberofpassengers}</td>
-                <td>${Plane.numberofwheels}</td>
-                <td>${Plane.numberofpilots}</td>
-                <td>${Plane.id}</td>
+                <td>${PLANE.name}</td>
+                <td>${PLANE.speed}</td>
+                <td>${PLANE.mass}</td>
+                <td>${PLANE.numberOfPassengers}</td>
+                <td>${PLANE.numberOfWheels}</td>
+                <td>${PLANE.numberOfPilots}</td>
+                <td>${PLANE.id}</td>
             </tr>
             </tbody>
         </table>

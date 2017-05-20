@@ -4,7 +4,7 @@
 <head>
     <title>Menu</title>
     <script src="/js/JQuery.js"></script>
-    <link rel="stylesheet" href="/src/main/webapp/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <script src="/js/bootstrap.js"></script>
 </head>
 <body>

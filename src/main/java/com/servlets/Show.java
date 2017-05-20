@@ -18,13 +18,13 @@ import java.sql.SQLException;
 public class Show extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
-        Integer speed = Integer.valueOf(request.getParameter("speednow"));
+        Integer speed = Integer.valueOf(request.getParameter("speed"));
         Integer mass = Integer.valueOf(request.getParameter("mass"));
-        Integer numberOfPassengers = Integer.valueOf(request.getParameter("numberofpassengers"));
-        Integer numberOfWheels = Integer.valueOf(request.getParameter("numberofwheels"));
-        Integer numberOfPilots = Integer.valueOf(request.getParameter("numberofpilots"));
+        Integer numberOfPassengers = Integer.valueOf(request.getParameter("numberOfPassengers"));
+        Integer numberOfWheels = Integer.valueOf(request.getParameter("numberOfWheels"));
+        Integer numberOfPilots = Integer.valueOf(request.getParameter("numberOfPilots"));
         Integer id = Integer.valueOf(request.getParameter("id"));
-        Plane plane = new Plane(name,speed,mass,numberOfPassengers,numberOfWheels,numberOfPilots,id);
+        Plane plane = new Plane(name,speed,id,mass,numberOfPassengers,numberOfWheels,numberOfPilots);
         DatabaseDAO databaseDAO = null;
         try {
             databaseDAO = DatabaseDAO.getInstance();
@@ -32,7 +32,7 @@ public class Show extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        request.setAttribute("Plane",plane);
+        request.setAttribute("PLANE",plane);
         request.getRequestDispatcher("/showAdded.jsp").forward(request,response);
     }
 

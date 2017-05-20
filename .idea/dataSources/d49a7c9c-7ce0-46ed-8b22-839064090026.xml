@@ -8,8 +8,8 @@
     <schema id="2" parent="1" name="public">
       <object-id>2200</object-id>
       <visible>1</visible>
-      <introspection-state-number>766</introspection-state-number>
-      <introspection-timestamp>2017-05-19.22:55:04.756</introspection-timestamp>
+      <introspection-state-number>779</introspection-state-number>
+      <introspection-timestamp>2017-05-20.18:28:20.600</introspection-timestamp>
     </schema>
     <schema id="3" parent="1" name="pg_catalog">
       <object-id>11</object-id>
@@ -28,7 +28,7 @@
     </schema>
     <table id="8" parent="2" name="bus">
       <object-id>24592</object-id>
-      <state-number>766</state-number>
+      <state-number>777</state-number>
     </table>
     <table id="9" parent="2" name="plane">
       <object-id>24584</object-id>
@@ -43,8 +43,8 @@
       <state-number>745</state-number>
       <data-type>text|0</data-type>
     </column>
-    <column id="12" parent="8" name="speednow">
-      <state-number>766</state-number>
+    <column id="12" parent="8" name="speed">
+      <state-number>770</state-number>
       <data-type>integer|0</data-type>
     </column>
     <column id="13" parent="8" name="mass">
@@ -52,11 +52,11 @@
       <data-type>integer|0</data-type>
     </column>
     <column id="14" parent="8" name="numberofpassengers">
-      <state-number>753</state-number>
+      <state-number>771</state-number>
       <data-type>integer|0</data-type>
     </column>
     <column id="15" parent="8" name="numberofwheels">
-      <state-number>754</state-number>
+      <state-number>772</state-number>
       <data-type>integer|0</data-type>
     </column>
     <index id="16" parent="8" name="bus_id_pk">
@@ -75,24 +75,24 @@
       <state-number>737</state-number>
       <data-type>text|0</data-type>
     </column>
-    <column id="19" parent="9" name="speednow">
-      <state-number>765</state-number>
+    <column id="19" parent="9" name="speed">
+      <state-number>769</state-number>
       <data-type>integer|0</data-type>
     </column>
     <column id="20" parent="9" name="mass">
       <state-number>739</state-number>
       <data-type>integer|0</data-type>
     </column>
-    <column id="21" parent="9" name="numberofpassengers">
-      <state-number>740</state-number>
+    <column id="21" parent="9" name="numberOfPassengers">
+      <state-number>773</state-number>
       <data-type>integer|0</data-type>
     </column>
-    <column id="22" parent="9" name="numberofwheels">
-      <state-number>741</state-number>
+    <column id="22" parent="9" name="numberOfWheels">
+      <state-number>774</state-number>
       <data-type>integer|0</data-type>
     </column>
-    <column id="23" parent="9" name="numberofpilots">
-      <state-number>742</state-number>
+    <column id="23" parent="9" name="numberOfPilots">
+      <state-number>775</state-number>
       <data-type>integer|0</data-type>
     </column>
     <column id="24" parent="9" name="id">

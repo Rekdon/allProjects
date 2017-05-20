@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,8 +22,8 @@ public class ShowAll extends HttpServlet {
         DatabaseDAO database = null;
         try {
             database = DatabaseDAO.getInstance();
-            List<Plane> databaseList = database.allPlane();
-            request.setAttribute("Planes",databaseList);
+            ArrayList<Plane> databaseList = database.allPlane();
+            request.setAttribute("PLANES",databaseList);
             request.getRequestDispatcher("/showAll.jsp").forward(request,response);
         } catch (SQLException e) {
             e.printStackTrace();

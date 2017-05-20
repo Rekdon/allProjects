@@ -4,7 +4,7 @@
 <head>
     <title>Add something</title>
     <script src="/js/JQuery.js"></script>
-    <link rel="stylesheet" href="/src/main/webapp/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <script src="/js/bootstrap.js"></script>
 
 </head>
@@ -19,24 +19,24 @@
                 <input type="text" name="name" id="name" class="form-control">
             </div>
             <div class="form-group">
-               <label for="speednow">Speed: </label>
-                <input type="text" name="speednow" id="speednow" class="form-control">
+               <label for="speed">Speed: </label>
+                <input type="text" name="speed" id="speed" class="form-control">
             </div>
             <div class="form-group">
                 <label for="mass">Mass: </label>
                 <input type="text" name="mass" id="mass" class="form-control">
             </div>
             <div class="form-group">
-                <label for="numberofpassengers">Number of passengers: </label>
-                <input type="text" name="numberofpassengers" id="numberofpassengers" class="form-control">
+                <label for="numberOfPassengers">Number of passengers: </label>
+                <input type="text" name="numberOfPassengers" id="numberOfPassengers" class="form-control">
             </div>
             <div class="form-group">
-                <label for="numberofwheels">Number of wheels: </label>
-                <input type="text" name="numberofwheels" id="numberofwheels" class="form-control">
+                <label for="numberOfWheels">Number of wheels: </label>
+                <input type="text" name="numberOfWheels" id="numberOfWheels" class="form-control">
             </div>
             <div class="form-group">
-                <label for="numberofpilots">Number of pilots: </label>
-                <input type="text" name="numberofpilots" id="numberofpilots" class="form-control">
+                <label for="numberOfPilots">Number of pilots: </label>
+                <input type="text" name="numberOfPilots" id="numberOfPilots" class="form-control">
             </div>
             <div class="form-group">
                 <label for="id">Id: </label>

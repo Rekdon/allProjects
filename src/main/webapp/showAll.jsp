@@ -5,7 +5,7 @@
 <head>
     <title>Show ALL</title>
     <script src="/js/JQuery.js"></script>
-    <link rel="stylesheet" href="/src/main/webapp/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <script src="/js/bootstrap.js"></script>
 </head>
 <body>
@@ -24,15 +24,15 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${Planes}" var="Plane">
+            <c:forEach items="${PLANES}" var="PLANE">
                 <tr>
-                    <td>${Plane.name}</td>
-                    <td>${Plane.speednow}</td>
-                    <td>${Plane.mass}</td>
-                    <td>${Plane.numberofpassengers}</td>
-                    <td>${Plane.numberofwheels}</td>
-                    <td>${Plane.numberofpilots}</td>
-                    <td>${Plane.id}</td>
+                    <td>${PLANE.name}</td>
+                    <td>${PLANE.speed}</td>
+                    <td>${PLANE.mass}</td>
+                    <td>${PLANE.numberOfPassengers}</td>
+                    <td>${PLANE.numberOfWheels}</td>
+                    <td>${PLANE.numberOfPilots}</td>
+                    <td>${PLANE.id}</td>
                 </tr>
             </c:forEach>
             </tbody>

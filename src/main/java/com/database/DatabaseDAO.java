@@ -29,6 +29,11 @@ public class DatabaseDAO implements StorageDAO {
     }
 
     private DatabaseDAO() throws SQLException {
+        try {
+            Class.forName("org.postgresql.Driver");
+        }catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         connection = DriverManager.getConnection(URL, USER, PASSWORD);
     }
 
@@ -37,7 +42,7 @@ public class DatabaseDAO implements StorageDAO {
     @Override
     public void savePlane(Plane plane) throws SQLException {
         PreparedStatement ps = connection.prepareStatement(
-                "INSERT INTO plane (name,speednow,mass,numberofpassengers,numberofwheels,numberofpilots,id)" +
+                "INSERT INTO plane (name,speed,mass,numberOfPassengers,numberOfWheels,numberOfPilots,id)" +
                         " VALUES (?,?,?,?,?,?,?)");
         ps.setString(1, plane.getName());
         ps.setInt(2, plane.getSpeed());
@@ -46,26 +51,27 @@ public class DatabaseDAO implements StorageDAO {
         ps.setInt(5, plane.getNumberOfWheels());
         ps.setInt(6, plane.getNumberOfPilots());
         ps.setInt(7, plane.getId());
-        ps.execute();
+//        ps.execute();
         ps.close();
     }
 
     @Override
-    public List<Plane> allPlane() throws SQLException {
-        List<Plane> result = new ArrayList<Plane>();
+    public ArrayList<Plane> allPlane() throws SQLException {
+        ArrayList<Plane> result = new ArrayList<>();
         Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("SELECT name,speednow,mass,numberofpassengers,numberofwheels,numberofpilots,id FROM plane");
+        ResultSet rs = statement.executeQuery("SELECT name,speed,id,mass,numberOfPassengers,numberOfWheels,numberOfPilots FROM plane");
         while (rs.next()) {
-            result.add(new Plane(
-                    rs.getString("name"),
-                    rs.getInt("speednow"),
-                    rs.getInt("mass"),
-                    rs.getInt("numberofpassengers"),
-                    rs.getInt("numberofwheels"),
-                    rs.getInt("numberofpilots"),
-                    rs.getInt("id")));
+            String name = rs.getString("name");
+            int speed = rs.getInt("speed");
+            int mass = rs.getInt("mass");
+            int id1 = rs.getInt("id");
+            int passengers = rs.getInt("numberOfPassengers");
+            int wheels = rs.getInt("numberOfWheels");
+            int pilots = rs.getInt("numberOfPilots");
+
+            Plane plane = new Plane(name,speed,mass,id1,passengers,wheels,pilots);
+            result.add(plane);
         }
-        //join пошукати
         return result;
     }
 
@@ -81,18 +87,19 @@ public class DatabaseDAO implements StorageDAO {
     }
 
     @Override
-    public void updatePlane(Plane plane, int id) throws SQLException {
-        String sql = "UPDATE plane SET title = ?, price = ?, page = ?, year = ?,id = ?";
-        sql += " where id = ?";
+    public void updatePlane(Plane plane, int id1) throws SQLException {
+        String sql = "UPDATE plane SET name = ?, speed = ?, mass = ?,id=? numberOfPassengers = ?," +
+                "numberOfWheels=?,numberOfPilots=?";
+        sql += " where id = id1";
 
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, plane.getName());
         statement.setInt(2, plane.getSpeed());
         statement.setInt(3, plane.getMass());
-        statement.setInt(4, plane.getNumberOfPassengers());
-        statement.setInt(5, plane.getNumberOfWheels());
-        statement.setInt(6, plane.getNumberOfPilots());
-        statement.setInt(7, plane.getId());
+        statement.setInt(4, plane.getId());
+        statement.setInt(5, plane.getNumberOfPassengers());
+        statement.setInt(6, plane.getNumberOfWheels());
+        statement.setInt(7, plane.getNumberOfPilots());
 
 
         statement.close();
@@ -110,14 +117,14 @@ public class DatabaseDAO implements StorageDAO {
 
         if (rs.next()) {
             String name = rs.getString("name");
-            int speed = rs.getInt("speednow");
+            int speed = rs.getInt("speed");
             int mass = rs.getInt("mass");
-            int passengers = rs.getInt("numberofpassengers");
-            int wheels = rs.getInt("numberofwheels");
-            int pilots = rs.getInt("numberofpilots");
             int id1 = rs.getInt("id");
+            int passengers = rs.getInt("numberOfPassengers");
+            int wheels = rs.getInt("numberOfWheels");
+            int pilots = rs.getInt("numberOfPilots");
 
-            plane = new Plane(name,speed,mass,passengers,wheels,pilots,id1);
+            plane = new Plane(name,speed,mass,id1,passengers,wheels,pilots);
         }
 
         rs.close();
