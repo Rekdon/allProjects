@@ -15,6 +15,9 @@ public abstract class Mashine implements Run {
     private String name;
     private int speedNow;
 
+    public Mashine() {
+    }
+
     public Mashine(String name, int speedNow) {
         this.name = name;
         this.speedNow = speedNow;

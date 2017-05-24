@@ -2,7 +2,6 @@ package com.servlets;
 
 import com.database.DatabaseDAO;
 import com.myclass.impliments.plane.Plane;
-import org.postgresql.util.PSQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

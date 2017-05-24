@@ -89,22 +89,37 @@ public class DatabaseDAO implements StorageDAO {
     }
 
     @Override
-    public void updatePlane(Plane plane, int id1) throws SQLException {
-        String sql = "UPDATE plane SET name = ?, speed = ?, mass = ?,id=? numberOfPassengers = ?," +
-                "numberOfWheels=?,numberOfPilots=?";
-        sql += " where id = id1";
+    public void updatePlane(Plane plane)
+    {
+        try
+        {
+            PreparedStatement ps;
 
-        PreparedStatement statement = connection.prepareStatement(sql);
-        statement.setString(1, plane.getName());
-        statement.setInt(2, plane.getSpeed());
-        statement.setInt(3, plane.getMass());
-        statement.setInt(4, plane.getId());
-        statement.setInt(5, plane.getNumberOfPassengers());
-        statement.setInt(6, plane.getNumberOfWheels());
-        statement.setInt(7, plane.getNumberOfPilots());
+            if ( plane.getId() > 0 )
+            {
+                ps = connection.prepareStatement( "UPDATE plane SET name = ?, speed = ?, id = ?, mass = ?,numberofpassengers = ?,numberofwheels = ?,numberofpilots = ? WHERE id = ?");
+                ps.setInt( 8, plane.getId());
+            }
+            else
+            {
+                ps = connection.prepareStatement( "INSERT INTO plane (name,speed,id,mass,numberofpassengers,numberofwheels,numberofpilots) VALUES (?,?,?,?,?,?,?)" );
+            }
 
-
-        statement.close();
+            ps.setString( 1, plane.getName());
+            ps.setInt( 2, plane.getSpeed());
+            ps.setInt( 3, plane.getId());
+            ps.setInt( 4, plane.getMass());
+            ps.setInt( 5, plane.getNumberOfPassengers());
+            ps.setInt( 6, plane.getNumberOfWheels());
+            ps.setInt( 7, plane.getNumberOfPilots());
+            //ps.setInt( 6, plane.getId());
+              ps.executeUpdate();
+            ps.close();
+        }
+        catch( SQLException e )
+        {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -134,5 +149,6 @@ public class DatabaseDAO implements StorageDAO {
 
         return plane;
     }
+
 
 }

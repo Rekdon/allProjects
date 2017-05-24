@@ -16,6 +16,8 @@ public class AddForm extends HttpServlet {
         request.getRequestDispatcher("/add.jsp").forward(request,response);
     }
 
+
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }

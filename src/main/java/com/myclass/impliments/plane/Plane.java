@@ -12,6 +12,8 @@ public class Plane extends Mashine {
     private int numberOfWheels;
     private int numberOfPilots;
 
+    public Plane() {
+    }
 
     public Plane(String name, int speedNow, int id, int mass, int numberOfPassengers, int numberOfWheels, int numberOfPilots) {
         super(name, speedNow);

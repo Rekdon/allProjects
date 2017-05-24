@@ -3,6 +3,7 @@ package com.database;
 import com.myclass.impliments.plane.Plane;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,6 +14,7 @@ public interface StorageDAO {
     void savePlane(Plane plane) throws SQLException;
     List<Plane> allPlane() throws SQLException;
     boolean deletePlane(Plane plane) throws SQLException;
-    public void updatePlane(Plane plane,int id) throws SQLException;
-    public Plane getPlane(int id) throws SQLException;
+
+    void updatePlane(Plane plane) throws SQLException;
+    Plane getPlane(int id) throws SQLException;
 }

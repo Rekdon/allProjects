@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -15,27 +16,33 @@
             <tr>
                 <th>Name</th>
                 <th>Speed</th>
+                <th>Id</th>
                 <th>Mass</th>
                 <th>Number Of Passengers</th>
                 <th>Number Of Wheels</th>
                 <th>Number Of Pilots</th>
-                <th>Id</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>${PLANE.name}</td>
-                <td>${PLANE.speed}</td>
-                <td>${PLANE.mass}</td>
-                <td>${PLANE.numberOfPassengers}</td>
-                <td>${PLANE.numberOfWheels}</td>
-                <td>${PLANE.numberOfPilots}</td>
-                <td>${PLANE.id}</td>
-            </tr>
+            <c:forEach items="${PLANES}" var="PLANE">
+                <tr>
+                    <td>${PLANE.name}</td>
+                    <td>${PLANE.speed}</td>
+                    <td>${PLANE.id}</td>
+                    <td>${PLANE.mass}</td>
+                    <td>${PLANE.numberOfPassengers}</td>
+                    <td>${PLANE.numberOfWheels}</td>
+                    <td>${PLANE.numberOfPilots}</td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </div>
 </div>
-
+<form>
+    <div class="container">
+        <button formaction="/main" class="b3" formmethod="POST">Return to Main</button>
+    </div>
+</form>
 </body>
 </html>
