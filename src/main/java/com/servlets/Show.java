@@ -41,14 +41,12 @@ public class Show extends HttpServlet {
             if(k==daoList.size())
             {
                 dao.savePlane(plane);
-                daoList = dao.allPlane();
                 daoList.add(plane);
             }
             else
             {
                 dao.updatePlane(plane);
                 daoList = dao.allPlane();
-
             }
             request.setAttribute("PLANES",daoList);
             request.getRequestDispatcher("/showAdded.jsp").forward(request,response);

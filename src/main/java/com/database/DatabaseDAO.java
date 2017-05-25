@@ -41,18 +41,16 @@ public class DatabaseDAO implements StorageDAO {
     private Connection connection;
 
     @Override
-    public void savePlane(Plane plane) throws SQLException,PSQLException {
-        PreparedStatement ps = connection.prepareStatement(
-                "INSERT INTO plane (name,speed,mass,numberOfPassengers,numberOfWheels,numberOfPilots,id)" +
-                        " VALUES (?,?,?,?,?,?,?)");
+    public void savePlane(Plane plane) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement("INSERT INTO plane (name,speed,id,mass,numberofpassengers,numberofwheels,numberofpilots) VALUES (?,?,?,?,?,?,?)");
         ps.setString(1, plane.getName());
         ps.setInt(2, plane.getSpeed());
-        ps.setInt(3, plane.getMass());
-        ps.setInt(4, plane.getNumberOfPassengers());
-        ps.setInt(5, plane.getNumberOfWheels());
-        ps.setInt(6, plane.getNumberOfPilots());
-        ps.setInt(7, plane.getId());
-//        ps.execute();
+        ps.setInt(3, plane.getId());
+        ps.setInt(4, plane.getMass());
+        ps.setInt(5, plane.getNumberOfPassengers());
+        ps.setInt(6, plane.getNumberOfWheels());
+        ps.setInt(7, plane.getNumberOfPilots());
+        ps.execute();
         ps.close();
     }
 

@@ -9,11 +9,6 @@
     <script src="/js/bootstrap.js"></script>
 </head>
 <body>
-<form>
-    <div class="container">
-        <button formaction="/inputId" formmethod="POST">To Show By ID</button>
-    </div>
-</form>
 <div class="container">
     <div>
         <table id="myTable" class="table">

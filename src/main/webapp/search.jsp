@@ -35,6 +35,10 @@
         </table>
     </div>
 </div>
-
+<form>
+    <div class="container">
+        <button formaction="/main" class="b3" formmethod="POST">Return to Main</button>
+    </div>
+</form>
 </body>
 </html>

@@ -9,7 +9,11 @@
 <body>
        <div style="font-size: 200%">Sorry my friend this id not found,try again!</div>
        <div class="container">
-        <button style="margin-left: 30px;width:80px;height: 50px; " formaction="/inputId" formmethod="POST">Back</button>
+           <form>
+               <div class="container">
+                   <button style="margin-left: 30px;width:80px;height: 50px; " formaction="/inputId" formmethod="POST">Back</button>
+               </div>
+           </form>
        </div>
 </body>
 </html>
